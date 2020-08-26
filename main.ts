@@ -1,4 +1,12 @@
-export function updateGameScore(player1Points, player2Points): Game {
+class Game {
+    public player1Points: number;
+    public player2Points: number;
+}
+
+
+
+
+export function updateGameScore(player1Points: number, player2Points: number): Game {
     const game = new Game
     game.player1Points = player1Points
     game.player2Points = player2Points
@@ -31,9 +39,4 @@ export function printScore([player1Points, player2Points]): string {
     }
     else {
         return `${scoreArray[player1Points]} - ${scoreArray[player2Points]}` }
-}
-
-class Game {
-    public player1Points: number;
-    public player2Points: number;
 }
