@@ -18,6 +18,17 @@ function player2WillWin(player1Points: number, player2Points: number) {
     return player2Points >= 4 && player2Points - player1Points >= 2
 }
 
+export function decideGameWinner(game): string {
+    const player1Points = game.player1Points
+    const player2Points = game.player2Points
+    if (player1WillWin) {
+        return 'Player 1'
+    } 
+    if (player2WillWin) {
+        return 'Player 2'
+    }
+}
+
 function bothMoreThan3Points(player1Points: number, player2Points: number) {
     return player1Points >= 3 && player2Points >= 3
 }
@@ -32,17 +43,6 @@ function advantage1(player1Points: number, player2Points: number) {
 
 function advantage2(player1Points: number, player2Points: number) {
     return player2Points == player1Points + 1
-}
-
-export function decideGameWinner(game): string {
-    const player1Points = game.player1Points
-    const player2Points = game.player2Points
-    if (player1WillWin) {
-        return 'Player 1'
-    } 
-    if (player2WillWin) {
-        return 'Player 2'
-    }
 }
 
 export function printScore([player1Points, player2Points]): string {
